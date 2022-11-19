@@ -1,15 +1,28 @@
-const express = require('express')
-const app = express()
-const port = 3000;
+let express = require('express');
+let router = express.Router();
 
-app.get('/HelloWorld', (req, res) => {
-  res.send('Hello World!')
-})
+module.exports.displayHomePage = (req, res, next)=>{
+    res.render('index',
+     { title: 'Car Page'
+       });
+  
+}
 
-app.get('/GoodByeWorld', (req, res) => {
-  res.send('Good Bye World!')
-})
-
-app.listen(port, () => {
-  console.log('Example app listening on port ${port}')
-})
+module.exports.displayAboutPage = (req, res, next)=>{
+    res.render('About',
+     { title: 'About'
+       });
+  
+}
+module.exports.displayProjectPage = (req, res, next)=>{
+    res.render('project',
+     { title: 'Project'
+       });
+  
+}
+module.exports.displayContactPage = (req, res, next)=>{
+    res.render('contact',
+     { title: 'Contact'
+       });
+  
+}
